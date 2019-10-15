@@ -1,5 +1,3 @@
-# cd OneDrive\Desktop\SwiftNews
-# python app.py
 import logging
 import time
 import random
