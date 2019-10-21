@@ -1,2 +1,4 @@
-bot_token = "your bot token given when created"
-bot_user = "your bot name you chose"
+import os
+
+bot_token = os.environ.get("TOKEN_KEY")
+bot_user = os.environ.get("USER_BOT")

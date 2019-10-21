@@ -1,0 +1,7 @@
+gunicorn
+python-telegram-bot
+pandas
+scipy
+nltk
+sklearn
+gensim

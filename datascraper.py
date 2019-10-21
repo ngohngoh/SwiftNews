@@ -21,12 +21,13 @@ def data_transform(folder_dir):
             article = " ".join(article)
             news.append(article)
 
+    print(news[:5])
+
     df = pd.DataFrame(np.array(news))
     pd.set_option('display.max_colwidth', -1)
     df.rename(columns={0:'description'}, inplace=True)
 
     stop_words = set(stopwords.words("english"))
-    # stop_words = list(stop_words).extend(["rdquo","ldquo"])
     cv=CountVectorizer(max_df=0.8,stop_words="english", max_features=10000, ngram_range=(1,3))
     X=cv.fit_transform(df['description'])
 
