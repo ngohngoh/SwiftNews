@@ -162,6 +162,11 @@ def main():
 
     from telebot.credentials import bot_token, bot_user
     updater = Updater(bot_token, use_context=True)
+    PORT = int(os.environ.get('PORT', '8443'))
+    updater.start_webhook(listen="0.0.0.0",
+                      port=PORT,
+                      url_path=bot_token)
+    updater.bot.set_webhook("https://swiftnews-bot.herokuapp.com/" + bot_token)
     dp = updater.dispatcher
 
     forcestart_handler = MessageHandler(Filters.text, force_start)
