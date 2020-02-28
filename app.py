@@ -162,7 +162,7 @@ def main():
 
     from telebot.credentials import bot_token, bot_user
     updater = Updater(bot_token, use_context=True)
-    PORT = int(os.environ.get('PORT', '8443'))
+    PORT = int(os.environ.get('PORT', '5000'))
     updater.start_webhook(listen="0.0.0.0",
                       port=PORT,
                       url_path=bot_token)
